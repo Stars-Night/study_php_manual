@@ -1,0 +1,11 @@
+PHP 支持一个错误控制运算符：@。当将其放置在一个 PHP 表达式之前，该表达式可能产生的任何错误信息都被忽略掉。
+
+如果用 set_error_handler() 设定了自定义的错误处理函数，仍然会被调用，
+但是此错误处理函数可以（并且也应该）调用 error_reporting()，而该函数在出错语句前有 @ 时将返回 0。
+
+error_get_last() 返回数组中的 "message" 元素储存了表达式产生的任意错误信息。
+此函数的返回结果会随着每次错误的发生而相应变化，所以需要尽早检查。
+<?php
+$my_file = @file ('non_existent_file') or
+    die ("Failed opening file: error was '" . error_get_last()['message'] . "'");
+
