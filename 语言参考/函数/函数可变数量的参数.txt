@@ -1,0 +1,17 @@
+PHP 在用户自定义函数中支持可变数量的参数列表。由 ... 语法实现。
+Note: 还可以使用以下函数来获取可变参数 func_num_args()、 func_get_arg() 和 func_get_args()，不建议使用这些方式，
+请使用 ... 来替代。
+
+包含 ... 的参数，会转换为指定参数变量的一个数组，见以下示例：
+<?php
+# $numbers 为数组
+function sum(...$numbers) {
+    $acc = 0;
+    foreach ($numbers as $n) {
+        $acc += $n;
+    }
+    return $acc;
+}
+
+echo sum(1, 2, 3, 4);
+
