@@ -1,1 +1,3 @@
-# study_php_manual
+# 学习PHP手册
+手册版本为2021年7月下载的PHP7.4
+
