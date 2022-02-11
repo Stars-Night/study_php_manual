@@ -1,0 +1,38 @@
+(PHP 7, PHP 8)
+Error 是所有PHP内部错误类的基类。
+
+Error implements Throwable {
+
+    /* 属性 */
+
+    protected string $message;
+
+    protected int $code;
+
+    protected string $file;
+
+    protected int $line;
+
+    /* 方法 */
+
+    public __construct( string $message = "", int $code = 0, Throwable $previous = null)
+
+    final public getMessage() : string
+
+    final public getPrevious() : Throwable
+
+    final public getCode() : mixed
+
+    final public getFile() : string
+
+    final public getLine() : int
+
+    final public getTrace() : array
+
+    final public getTraceAsString() : string
+
+    public __toString() : string
+
+    final private __clone() : void
+}
+

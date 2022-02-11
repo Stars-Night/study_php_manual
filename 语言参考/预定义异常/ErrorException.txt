@@ -1,0 +1,35 @@
+错误异常。
+
+ErrorException  extends Exception {
+
+    /* 属性 */
+
+    protected int $severity;  #异常级别
+
+    /* 方法 */
+
+    public __construct( string $message = "", int $code = 0, int $severity = E_ERROR, string $filename = __FILE__, int $lineno = __LINE__, Exception $previous = null)
+
+    final public getSeverity() : int
+
+    /* 继承的方法 */
+
+    final public Exception::getMessage() : string
+
+    final public Exception::getPrevious() : Throwable
+
+    final public Exception::getCode() : mixed
+
+    final public Exception::getFile() : string
+
+    final public Exception::getLine() : int
+
+    final public Exception::getTrace() : array
+
+    final public Exception::getTraceAsString() : string
+
+    public Exception::__toString() : string
+
+    final private Exception::__clone() : void
+}
+

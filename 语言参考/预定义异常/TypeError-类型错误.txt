@@ -1,0 +1,39 @@
+(PHP 7, PHP 8)
+有三种情况会抛出 TypeError。
+第一种，传递给函数的参数类型与函数预期声明的参数类型不匹配；
+第二种，函数返回的值与声明的函数返回类型不匹配；
+第三种，调用 PHP 内置函数时，传递了非法的数字参数（仅限在严格模式下 / strict mode）。
+
+TypeError  extends Error {
+
+    /* 继承的属性 */
+
+    protected string $message;
+
+    protected int $code;
+
+    protected string $file;
+
+    protected int $line;
+
+    /* 继承的方法 */
+
+    final public Error::getMessage() : string
+
+    final public Error::getPrevious() : Throwable
+
+    final public Error::getCode() : mixed
+
+    final public Error::getFile() : string
+
+    final public Error::getLine() : int
+
+    final public Error::getTrace() : array
+
+    final public Error::getTraceAsString() : string
+
+    public Error::__toString() : string
+
+    final private Error::__clone() : void
+}
+

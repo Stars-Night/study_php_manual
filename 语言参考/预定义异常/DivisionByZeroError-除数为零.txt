@@ -1,0 +1,36 @@
+(PHP 7, PHP 8)
+DivisionByZeroError 当除数为零时被抛出。
+
+DivisionByZeroError  extends ArithmeticError {
+
+    /* 继承的属性 */
+
+    protected string $message;
+
+    protected int $code;
+
+    protected string $file;
+
+    protected int $line;
+
+    /* 继承的方法 */
+
+    final public Error::getMessage() : string
+
+    final public Error::getPrevious() : Throwable
+
+    final public Error::getCode() : mixed
+
+    final public Error::getFile() : string
+
+    final public Error::getLine() : int
+
+    final public Error::getTrace() : array
+
+    final public Error::getTraceAsString() : string
+
+    public Error::__toString() : string
+
+    final private Error::__clone() : void
+}
+

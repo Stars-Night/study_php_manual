@@ -1,0 +1,37 @@
+Exception是所有异常的基类。
+
+Exception {
+
+    /* 属性 */
+
+    protected string $message;  #异常消息内容
+
+    protected int $code;     #异常代码
+
+    protected string $file;  #抛出异常的文件名
+
+    protected int $line;     #抛出异常在该文件中的行号
+
+    /* 方法 */
+    # $previous 异常链中的前一个异常。
+    public __construct( string $message = "", int $code = 0, Throwable $previous = null)
+
+    final public getMessage() : string
+
+    final public getPrevious() : Throwable  #返回异常链中的前一个异常
+
+    final public getCode() : mixed
+
+    final public getFile() : string
+
+    final public getLine() : int
+
+    final public getTrace() : array  #获取异常追踪信息
+
+    final public getTraceAsString() : string  #获取字符串类型的异常追踪信息
+
+    public __toString() : string   #将异常对象转换为字符串，例如直接 echo $e
+
+    final private __clone() : void #私有方法，尝试克隆异常，这将导致一个致命错误。
+}
+
