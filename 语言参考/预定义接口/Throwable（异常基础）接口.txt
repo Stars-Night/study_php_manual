@@ -1,0 +1,27 @@
+(PHP 7, PHP 8)
+PHP 7 里，Throwable 是能被 throw 语句抛出的最基本的接口（interface），包含了 Error 和 Exception。
+
+Note:
+PHP 类无法直接实现 （implement） Throwable 接口，而应当去继承 Exception。
+
+Throwable {
+
+    /* 方法 */
+
+    abstract public getMessage() : string
+
+    abstract public getCode() : int
+
+    abstract public getFile() : string
+
+    abstract public getLine() : int
+
+    abstract public getTrace() : array
+
+    abstract public getTraceAsString() : string
+
+    abstract public getPrevious() : Throwable
+
+    abstract public __toString() : string
+}
+
